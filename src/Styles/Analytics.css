@@ -1,0 +1,45 @@
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  /* border-collapse: collapse; */
+  width: 85%;
+  border-radius: 5%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ table tr:nth-child(even) {
+  background-color:#021a4e ;
+} 
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #9370db;
+  color: white;
+}
+
+.pie-chart{
+  height: 400px;
+  width: 300px;
+
+}
+
+.bar-chart{
+  height: 400px;
+  width: 500px;
+  justify-self: center;
+}
+
+.charts{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}

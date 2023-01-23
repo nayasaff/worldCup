@@ -1,0 +1,40 @@
+.homecontainer{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 0 2vw 2vw 2vw;
+    
+}
+
+.homeCard{
+    margin: 15px;
+    margin-left: 40px;
+    border: 1px solid rgb(224, 217, 217);
+    cursor: pointer;
+    border-radius: 2%;   
+    
+}
+.homeCard:hover {
+    box-shadow: 0 0 11px rgb(250, 249, 246); 
+}
+
+.homeCard--text{
+    padding: 13px 0;
+    margin-left: 7px;
+  
+}
+.homeCard a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.homeCard img{
+    width: 100%;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    
+}
+
+h2{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+   
+}
