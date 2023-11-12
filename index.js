@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const cors=require("cors");
+const cors = require('cors');
 const apiRoutes = require('./routes/api');
 const { startKafkaProducer } = require('./connectors/kafka');
 const rateLimit = require('express-rate-limit') ;
