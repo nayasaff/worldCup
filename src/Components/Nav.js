@@ -34,7 +34,7 @@ export default function Nav(props){
               </Link>
               
             
-            <Link to="/analytics" className={window.location.href === '/analytics' ? 'pages' : ''} >
+            <Link to="/analytics" className={window.location.href.contains('/analytics') ? 'pages' : ''} >
               <a href="/#">Analytics</a> 
                </Link>
         
