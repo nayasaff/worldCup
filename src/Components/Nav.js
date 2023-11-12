@@ -22,7 +22,7 @@ export default function Nav(props){
         <div className ='container'>
         <div className=''>
           <div className=''>
-          <img src={require("../Img/World-Cup-logo-landscape-on-dark.webp")} width="120" height="50" alt='fifa word cup'/>
+          <img src={require("../Assets/World-Cup-logo-landscape-on-dark.webp")} width="120" height="50" alt='fifa word cup'/>
   
   
           </div>

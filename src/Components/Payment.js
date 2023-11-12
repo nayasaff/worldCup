@@ -17,14 +17,8 @@ function Payment() {
 
   return (
     <>
-    <Nav/>
     <Elements stripe={stripeTestPromise}>
-      
       <CheckoutForm location= {location.state}/>
-
-       
-        
-
     </Elements >
     </>
   )

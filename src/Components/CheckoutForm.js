@@ -3,7 +3,6 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import Success from './Success'
 import axios from "axios"
 import '../Styles/Payment.css'
-import Alert from 'react-bootstrap/Alert';
 
 
 const CARD_OPTIONS = {
@@ -101,19 +100,15 @@ export default function CheckoutForm(props){
     }
         
     }
-
-    
-      
-        
-        return (
+    return (
             <>
         {!success ?
         <div className='payment--form'>
 
         <form onSubmit={e=>handleSubmit(e)}>
         <h2 className='payment-price'>Total Price : {props.location.price * props.location.quantity}</h2>
-            <input required type='text' placeholder='  Card Holder Name'/>
-            <input required type='email' placeholder='  Email' value={email} onChange={(e)=>setEmail(prev => e.target.value)}/>
+            <input required style={{paddingLeft : '0.25rem', color : 'whitesmoke'}} type='text' placeholder='  Card Holder Name'/>
+            <input required style={{paddingLeft : '0.25rem', color : 'whitesmoke'}} type='email' placeholder='  Email' value={email} onChange={(e)=>setEmail(prev => e.target.value)}/>
             <fieldset className="FormGroup">
                 <div className="FormRow">
 

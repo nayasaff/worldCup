@@ -1,17 +1,19 @@
+.homepage{
+    padding : 0 3rem;
+}
+
 .homecontainer{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    padding: 0 2vw 2vw 2vw;
+    gap : 2.5rem;
     
 }
 
 .homeCard{
-    margin: 15px;
-    margin-left: 40px;
     border: 1px solid rgb(224, 217, 217);
     cursor: pointer;
     border-radius: 2%;   
-    
+    margin-bottom: 1rem;
 }
 .homeCard:hover {
     box-shadow: 0 0 11px rgb(250, 249, 246); 
