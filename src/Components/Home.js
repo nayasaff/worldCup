@@ -49,4 +49,6 @@ export default function Home(){
     )
 }
 
-//match ui
+//own kafka
+//out of stock
+//continue image till 64

@@ -1,15 +1,23 @@
 import React from 'react'
 
 const Table = (props) => {
+
+  const getStatus = (status) => {
+      if(status === "TICKET_PENDING")
+      return "Pending"
+      else if(status === "TICKET_RESERVED")
+      return "Reserved"
+      else if(status === "TICKET_CANCELLED")
+      return "Cancelled"
+  }
+
   if(props.data.length !== 0)
-  console.log(props.data[1])
   return (
     <>
     <table>
         <thead>
           <tr>
             <th>match number</th>
-            
             <th>category</th>
             <th>quantity</th>
             <th>price</th>
@@ -18,27 +26,18 @@ const Table = (props) => {
         </thead>
         {props.data.length !== 0 && (<tbody>
           {props.data.map((item, _id) => {
-         
-          if(_id >= 100)
-            return null;
-          else
-
           return (
            
             <tr key={_id}>
               <td>{item.body.matchNumber}</td> 
-              
-              
                <td>{item && item.body.tickets.category}</td>
               <td>{item &&item.body.tickets.quantity}</td>
               <td>{item && item.body.tickets.price}</td>
-              <td>{item && item.meta.action}</td>
-             
+              <td>{item && getStatus(item.meta.action)}</td>
             </tr>
           )  })}
         </tbody>) }
       </table>
-
       
     </>
   )

@@ -29,12 +29,12 @@ export default function Nav(props){
         </div>
   
           <div className='pages'>
-            <Link to="/" className={props.home}> 
+            <Link to="/" className={window.location.href === '/' ? 'pages' : ''}> 
               <a href="/#">Home</a>
               </Link>
               
             
-            <Link to="/analytics" className={props.book} >
+            <Link to="/analytics" className={window.location.href === '/analytics' ? 'pages' : ''} >
               <a href="/#">Analytics</a> 
                </Link>
         

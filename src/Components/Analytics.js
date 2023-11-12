@@ -76,31 +76,30 @@ export default function Analytics(){
             //let counts=[];
 
             const res = await fetch(
-              "https://analytics-silk-psi.vercel.app/api/analytics"
+              "https://shop-api-pied.vercel.app/api/analytics"
             )
             const data= await res.json()
             setAnalytics(data)
-            console.log(analytic)
-            for(let i=0; i<99;i++){
-                if(analytic[i].meta.action==='TICKET_RESERVED'){
+            for(let i=0; i< data.length ;i++){
+                if(data[i].meta.action==='TICKET_RESERVED'){
                     setReservedCount(prevValue=> prevValue+1);
                 }
-                else  if(analytic[i].meta.action==='TICKET_PENDING'){
+                else  if(data[i].meta.action==='TICKET_PENDING'){
                     setPendingCount(prevValue=> prevValue+1);
                 }
-                else if(analytic[i].meta.action==='TICKET_CANCELLED'){
+                else if(data[i].meta.action==='TICKET_CANCELLED'){
                     setCancelledCount(prevValue=> prevValue+1);
                 }
 
             }
-            for(let i=0; i<99;i++){
-                if(analytic[i].body.tickets.category===1){
+            for(let i=0; i< data.length ;i++){
+                if(data[i].body.tickets.category===1){
                     setCat1(prevValue=> prevValue+1);
                 }
-                else  if(analytic[i].body.tickets.category===2){
+                else  if(data[i].body.tickets.category===2){
                     setCat2(prevValue=> prevValue+1);
                 }
-                else if(analytic[i].body.tickets.category===3){
+                else if(data[i].body.tickets.category===3){
                     setCat3(prevValue=> prevValue+1);
                 }
 
@@ -110,21 +109,21 @@ export default function Analytics(){
           }
         getAnalytics();
 
-    },[analytic])
+    },[])
 
 
     return(
-        <div>
-            <Nav book='active'
-            home=''
-            />
-            <Table data={analytic } />
-            <div className='charts'>
+        pendingCount? <div>
+            <div style={{display : 'flex', alignItems :'center' , justifyContent : 'center', marginTop : '2rem', flexDirection : "column"}}>
+            <h3>Analysis of tickets status</h3>
             <BarChart data = {reservedCount} data2={pendingCount} data3={cancelledCount}/>
+            </div>
+            <div style={{display : 'flex', justifyContent : 'center', marginTop : '0.1rem', alignItems :'center', flexDirection : 'column'}}>
+            <h3>Analysis of tickets Price</h3>
              <PieChart data={cat1} data2={cat2}  data3= {cat3}/> 
              </div>
-
-        </div>
+            <Table data={analytic}/>
+        </div> : <></>
         
     )
 }
