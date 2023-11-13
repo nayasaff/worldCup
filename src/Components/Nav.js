@@ -1,14 +1,14 @@
 import React from "react";
 import '../index.css'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import '../Styles/Nav.css'
-
 
 
 
 export default function Nav(props){
 
   const [searchName, setSearchName] = React.useState("");
+  const location = useLocation()
 
   function handleChange(event){
     setSearchName(prev => event.target.value)
@@ -29,12 +29,12 @@ export default function Nav(props){
         </div>
   
           <div className='pages'>
-            <Link to="/" className={window.location.href === '/' ? 'pages' : ''}> 
+            <Link to="/" className={!location.pathname.includes("analytics") && "active"}> 
               <a href="/#">Home</a>
               </Link>
               
             
-            <Link to="/analytics" className={window.location.href.contains('/analytics') ? 'pages' : ''} >
+            <Link to="/analytics" className={location.pathname.includes("analytics") && "active"}>
               <a href="/#">Analytics</a> 
                </Link>
         

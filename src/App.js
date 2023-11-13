@@ -11,8 +11,7 @@ import Nav from './Components/Nav';
 function App() {
   return (
     <>
-          <Nav home='active'
-        book=''/>
+    <Nav />
     <Routes>
 
     <Route path="/" element={<Home />} />
